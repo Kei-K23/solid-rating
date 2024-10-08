@@ -13,6 +13,7 @@ export default function HalfStarSvg(props: HalfStarSvgProps) {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
+      style={{ transition: "all 0.3s ease" }}
     >
       <defs>
         <linearGradient id="halfFill" x1="0%" y1="0%" x2="100%" y2="0%">

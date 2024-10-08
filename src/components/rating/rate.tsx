@@ -48,6 +48,8 @@ export default function Rate(props: RateProps) {
       onMouseMove={props.onMouseMove}
       onMouseLeave={props.onMouseLeave}
       onClick={props.onClick}
+      tabIndex={props.readOnly || props.isDisabled ? -1 : 0}
+      aria-label={`Rate ${props.index + 1} stars`}
     >
       <Switch>
         <Match when={!halfFilled()}>

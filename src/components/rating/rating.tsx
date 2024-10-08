@@ -4,13 +4,14 @@ import Star from "./rate";
 
 interface RatingProps {
   maxRating?: number;
-  isDisabled?: boolean;
   initialRating?: number;
   size?: number;
   color?: string;
   activeColor?: string;
   halfFillMode?: boolean;
   readOnly?: boolean;
+  isDisabled?: boolean;
+  isRequired?: boolean;
   onChange?: (rating: number) => void;
   onClick?: (rating: number) => void;
 }
@@ -28,11 +29,18 @@ export default function Rating(props: RatingProps) {
       (event.currentTarget as HTMLElement).getBoundingClientRect().left;
 
     const halfStarWidth = starWidth / 2;
+    console.log(halfStarWidth, "her");
 
     if (props.halfFillMode) {
       setHoverRating(mouseX < halfStarWidth ? index + 0.5 : index + 1);
     } else {
       setHoverRating(index + 1);
+    }
+    // When isRequired true, rating item should be have one at least, If not just reset by passing -1 to hoverRating signal
+    if (!props.isRequired) {
+      if (mouseX < 5) {
+        setHoverRating(-1);
+      }
     }
 
     props.onChange?.(hoverRating());
@@ -68,9 +76,6 @@ export default function Rating(props: RatingProps) {
           );
         }}
       </Index>
-      <Show when={!props.readOnly}>
-        <span style={{ "margin-left": "10px" }}>{hoverRating()}</span>
-      </Show>
     </RatingContainer>
   );
 }

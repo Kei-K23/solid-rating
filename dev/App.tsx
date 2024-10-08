@@ -15,19 +15,31 @@ function App() {
 
   return (
     <div>
-      <h1>Solid Rating</h1>
-      <Rating
-        maxRating={5}
-        initialRating={3}
-        size={60}
-        color="#e4e5e9"
-        activeColor="#Afc107"
-        halfFillMode={true}
-        readOnly={false}
-        isDisabled
-        onChange={setValue}
-        onClick={setClickValue}
-      />
+      <h1
+        style={{
+          "text-align": "center",
+        }}
+      >
+        Solid Rating
+      </h1>
+      <div
+        style={{
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+        }}
+      >
+        <Rating
+          maxRating={5}
+          initialRating={3}
+          size={100}
+          color="#e4e5e9"
+          activeColor="#Afc107"
+          halfFillMode
+          onChange={setValue}
+          onClick={setClickValue}
+        />
+      </div>
     </div>
   );
 }
