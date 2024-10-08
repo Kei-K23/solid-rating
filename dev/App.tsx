@@ -1,8 +1,11 @@
+import { createEffect, createSignal } from "solid-js";
 import StarRating from "src";
 function App() {
-  const handleRatingChange = (newRating: number) => {
-    console.log(`New rating: ${newRating}`);
-  };
+  const [value, setValue] = createSignal(0);
+
+  createEffect(() => {
+    console.log(value());
+  });
 
   return (
     <div>
@@ -10,8 +13,8 @@ function App() {
       <StarRating
         maxRating={5}
         initialRating={3}
-        onChange={handleRatingChange}
-        size={32}
+        onChange={setValue}
+        size={60}
         color="#e4e5e9"
         activeColor="#ffc107"
         halfStars={true}

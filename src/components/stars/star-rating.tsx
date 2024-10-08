@@ -33,6 +33,8 @@ export default function StarRating(props: StarRatingProps) {
     } else {
       setHoverRating(index + 1);
     }
+
+    props.onChange?.(hoverRating());
   };
 
   const handleMouseLeave = () => {
