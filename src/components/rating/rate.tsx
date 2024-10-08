@@ -19,9 +19,9 @@ export default function Rate(props: RateProps) {
   const [filled, setFilled] = createSignal(false);
   const [halfFilled, setHalfFilled] = createSignal(false);
 
-  const starSize = props.size || 24;
-  const starColor = props.color || "#e4e5e9";
-  const activeStarColor = props.activeColor || "#ffc107";
+  const ratingItemSize = props.size || 24;
+  const ratingItemColor = props.color || "#e4e5e9";
+  const ratingActiveItemColor = props.activeColor || "#ffc107";
 
   createEffect(() => {
     // Change and update the rating when hovering
@@ -38,8 +38,8 @@ export default function Rate(props: RateProps) {
   return (
     <div
       style={{
-        width: `${starSize}px`,
-        height: `${starSize}px`,
+        width: `${ratingItemSize}px`,
+        height: `${ratingItemSize}px`,
         position: "relative",
         cursor: props.readOnly ? "default" : "pointer",
       }}
@@ -51,14 +51,14 @@ export default function Rate(props: RateProps) {
         <Match when={!halfFilled()}>
           <StarSvg
             filled={filled()}
-            starColor={starColor}
-            activeStarColor={activeStarColor}
+            ratingItemColor={ratingItemColor}
+            ratingActiveItemColor={ratingActiveItemColor}
           />
         </Match>
         <Match when={halfFilled()}>
           <HalfStarSvg
-            starColor={starColor}
-            activeStarColor={activeStarColor}
+            ratingItemColor={ratingItemColor}
+            ratingActiveItemColor={ratingActiveItemColor}
           />
         </Match>
       </Switch>

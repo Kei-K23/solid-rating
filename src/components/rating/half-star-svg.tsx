@@ -1,6 +1,6 @@
 interface HalfStarSvgProps {
-  starColor: string;
-  activeStarColor: string;
+  ratingItemColor: string;
+  ratingActiveItemColor: string;
 }
 
 export default function HalfStarSvg(props: HalfStarSvgProps) {
@@ -9,14 +9,14 @@ export default function HalfStarSvg(props: HalfStarSvgProps) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="none"
-      stroke={props.starColor}
+      stroke={props.ratingItemColor}
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
     >
       <defs>
         <linearGradient id="halfFill" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="50%" stop-color={props.activeStarColor} />
+          <stop offset="50%" stop-color={props.ratingActiveItemColor} />
           <stop offset="50%" stop-color="transparent" />
         </linearGradient>
         <mask id="halfMask">
@@ -31,7 +31,7 @@ export default function HalfStarSvg(props: HalfStarSvgProps) {
 
       <polygon
         points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-        stroke={props.activeStarColor}
+        stroke={props.ratingActiveItemColor}
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"

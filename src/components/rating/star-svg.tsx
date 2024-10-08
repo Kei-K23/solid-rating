@@ -1,15 +1,17 @@
 interface StarSvgProps {
   filled: boolean;
-  starColor: string;
-  activeStarColor: string;
+  ratingItemColor: string;
+  ratingActiveItemColor: string;
 }
 export default function StarSvg(props: StarSvgProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      fill={props.filled ? props.activeStarColor : props.starColor}
-      stroke={props.filled ? props.activeStarColor : props.starColor}
+      fill={props.filled ? props.ratingActiveItemColor : props.ratingItemColor}
+      stroke={
+        props.filled ? props.ratingActiveItemColor : props.ratingItemColor
+      }
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"

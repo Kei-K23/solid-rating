@@ -2,7 +2,7 @@ import { createSignal, Show, Index } from "solid-js";
 import RatingContainer from "./rating-container";
 import Star from "./rate";
 
-interface StarRatingProps {
+interface RatingProps {
   maxRating?: number;
   initialRating?: number;
   size?: number;
@@ -14,7 +14,7 @@ interface StarRatingProps {
   onClick?: (rating: number) => void;
 }
 
-export default function Rating(props: StarRatingProps) {
+export default function Rating(props: RatingProps) {
   const [hoverRating, setHoverRating] = createSignal(props.initialRating || 0);
 
   const handleMouseMove = (index: number, event: MouseEvent) => {
