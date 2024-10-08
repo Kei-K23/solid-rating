@@ -1,9 +1,9 @@
 import { JSX } from "solid-js";
 
-interface StarContainerProps {
+interface RatingContainerProps {
   children: JSX.Element;
 }
-export default function StarContainer({ children }: StarContainerProps) {
+export default function RatingContainer({ children }: RatingContainerProps) {
   return (
     <div
       style={{

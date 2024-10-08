@@ -1,29 +1,21 @@
-import {
-  Accessor,
-  createEffect,
-  createSignal,
-  Match,
-  Show,
-  Switch,
-} from "solid-js";
+import { Accessor, createEffect, createSignal, Match, Switch } from "solid-js";
 import HalfStarSvg from "./half-star-svg";
 import StarSvg from "./star-svg";
 
-interface StarProps {
+interface RateProps {
   hoverRating: Accessor<number>;
   onMouseMove: (event: MouseEvent) => void;
   onMouseLeave: () => void;
   onClick: () => void;
   index: number;
-  halfStars?: boolean;
+  halfFillMode?: boolean;
   size?: number;
   color?: string;
   activeColor?: string;
-  customIcon?: string;
   readOnly?: boolean;
 }
 
-export default function Star(props: StarProps) {
+export default function Rate(props: RateProps) {
   const [filled, setFilled] = createSignal(false);
   const [halfFilled, setHalfFilled] = createSignal(false);
 
@@ -36,7 +28,7 @@ export default function Star(props: StarProps) {
     props.hoverRating() > props.index ? setFilled(true) : setFilled(false);
 
     // Handling half star
-    if (props.halfStars) {
+    if (props.halfFillMode) {
       props.hoverRating() - props.index === 0.5
         ? setHalfFilled(true)
         : setHalfFilled(false);
@@ -57,39 +49,17 @@ export default function Star(props: StarProps) {
     >
       <Switch>
         <Match when={!halfFilled()}>
-          <Show
-            when={props.customIcon}
-            fallback={
-              <StarSvg
-                filled={filled()}
-                starColor={starColor}
-                activeStarColor={activeStarColor}
-              />
-            }
-          >
-            <img
-              src={props.customIcon}
-              alt="Custom star icon"
-              style={{ width: "100%", height: "100%" }}
-            />
-          </Show>
+          <StarSvg
+            filled={filled()}
+            starColor={starColor}
+            activeStarColor={activeStarColor}
+          />
         </Match>
         <Match when={halfFilled()}>
-          <Show
-            when={props.customIcon}
-            fallback={
-              <HalfStarSvg
-                starColor={starColor}
-                activeStarColor={activeStarColor}
-              />
-            }
-          >
-            <img
-              src={props.customIcon}
-              alt="Custom star icon"
-              style={{ width: "100%", height: "100%" }}
-            />
-          </Show>
+          <HalfStarSvg
+            starColor={starColor}
+            activeStarColor={activeStarColor}
+          />
         </Match>
       </Switch>
     </div>

@@ -1,25 +1,29 @@
 import { createEffect, createSignal } from "solid-js";
-import StarRating from "src";
+import Rating from "src";
 function App() {
   const [value, setValue] = createSignal(0);
+  const [clickValue, setClickValue] = createSignal(0);
 
   createEffect(() => {
     console.log(value());
   });
+  createEffect(() => {
+    console.log(clickValue(), "onClick");
+  });
 
   return (
     <div>
-      <h1>Product Rating</h1>
-      <StarRating
+      <h1>Solid Rating</h1>
+      <Rating
         maxRating={5}
         initialRating={3}
-        onChange={setValue}
         size={60}
         color="#e4e5e9"
-        activeColor="#ffc107"
-        halfStars={true}
-        // customIcon="path/to/custom-icon.svg"
-        // readOnly={true}
+        activeColor="#Afc107"
+        halfFillMode={true}
+        readOnly={false}
+        onChange={setValue}
+        onClick={setClickValue}
       />
     </div>
   );

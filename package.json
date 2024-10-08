@@ -1,17 +1,17 @@
 {
-  "name": "solid-starsjs",
+  "name": "solid-rating",
   "version": "0.1.0",
-  "description": "Highly customizable, zero dependency stars rating component for Solid.",
+  "description": "Highly customizable, easy to use, declarative and zero dependency stars rating component for Solid.",
   "license": "MIT",
   "author": "Kei-K23",
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kei-K23/solid-starsjs.git"
+    "url": "git+https://github.com/Kei-K23/solid-rating.git"
   },
-  "homepage": "https://github.com/Kei-K23/solid-starsjs#readme",
+  "homepage": "https://github.com/Kei-K23/solid-rating#readme",
   "bugs": {
-    "url": "https://github.com/Kei-K23/solid-starsjs/issues"
+    "url": "https://github.com/Kei-K23/solid-rating/issues"
   },
   "files": [
     "dist"
@@ -72,10 +72,10 @@
   },
   "keywords": [
     "solid",
-    "solidjs",
     "stars",
     "rating",
-    "components"
+    "components",
+    "solid-components"
   ],
   "engines": {
     "node": ">=18",
