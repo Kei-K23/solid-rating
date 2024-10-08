@@ -1,30 +1,25 @@
-import type { Component } from 'solid-js'
-import logo from './logo.svg'
-import styles from './App.module.css'
-import { StarRating } from 'src'
+import StarRating from "src";
+function App() {
+  const handleRatingChange = (newRating: number) => {
+    console.log(`New rating: ${newRating}`);
+  };
 
-const App: Component = () => {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <h1>
-          <StarRating />
-        </h1>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+    <div>
+      <h1>Product Rating</h1>
+      <StarRating
+        maxRating={5}
+        initialRating={3}
+        onChange={handleRatingChange}
+        size={32}
+        color="#e4e5e9"
+        activeColor="#ffc107"
+        // halfStars={true}
+        // customIcon="path/to/custom-icon.svg"
+        // readOnly={true}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
