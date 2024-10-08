@@ -1,4 +1,4 @@
-import { createSignal, createEffect, For, Show, Index } from "solid-js";
+import { createSignal, Show, Index } from "solid-js";
 import StarContainer from "./star-container";
 import Star from "./star";
 
@@ -15,7 +15,7 @@ interface StarRatingProps {
 }
 
 export default function StarRating(props: StarRatingProps) {
-  const [hoverRating, setHoverRating] = createSignal(0);
+  const [hoverRating, setHoverRating] = createSignal(props.initialRating || 0);
 
   const handleMouseMove = (index: number, event: MouseEvent) => {
     if (props.readOnly) return;
@@ -52,6 +52,7 @@ export default function StarRating(props: StarRatingProps) {
             <Star
               index={index}
               hoverRating={hoverRating}
+              halfStars={props.halfStars}
               onMouseMove={(event) => handleMouseMove(index, event)}
               onMouseLeave={handleMouseLeave}
               onClick={handleClick}

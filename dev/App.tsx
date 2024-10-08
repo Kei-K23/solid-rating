@@ -14,7 +14,7 @@ function App() {
         size={32}
         color="#e4e5e9"
         activeColor="#ffc107"
-        // halfStars={true}
+        halfStars={true}
         // customIcon="path/to/custom-icon.svg"
         // readOnly={true}
       />
