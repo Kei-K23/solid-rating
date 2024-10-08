@@ -3,16 +3,17 @@ import HalfStarSvg from "./half-star-svg";
 import StarSvg from "./star-svg";
 
 interface RateProps {
-  hoverRating: Accessor<number>;
-  onMouseMove: (event: MouseEvent) => void;
-  onMouseLeave: () => void;
-  onClick: () => void;
   index: number;
   halfFillMode?: boolean;
   size?: number;
   color?: string;
   activeColor?: string;
   readOnly?: boolean;
+  isDisabled?: boolean;
+  hoverRating: Accessor<number>;
+  onMouseMove: (event: MouseEvent) => void;
+  onMouseLeave: () => void;
+  onClick: () => void;
 }
 
 export default function Rate(props: RateProps) {
@@ -43,6 +44,7 @@ export default function Rate(props: RateProps) {
         position: "relative",
         cursor: props.readOnly ? "default" : "pointer",
       }}
+      class={`${props.isDisabled && "disabled-div"}`}
       onMouseMove={props.onMouseMove}
       onMouseLeave={props.onMouseLeave}
       onClick={props.onClick}

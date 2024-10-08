@@ -1,5 +1,7 @@
 import { createEffect, createSignal } from "solid-js";
 import Rating from "src";
+import "src/style.css";
+
 function App() {
   const [value, setValue] = createSignal(0);
   const [clickValue, setClickValue] = createSignal(0);
@@ -22,6 +24,7 @@ function App() {
         activeColor="#Afc107"
         halfFillMode={true}
         readOnly={false}
+        isDisabled
         onChange={setValue}
         onClick={setClickValue}
       />

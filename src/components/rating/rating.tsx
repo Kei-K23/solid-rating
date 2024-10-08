@@ -4,6 +4,7 @@ import Star from "./rate";
 
 interface RatingProps {
   maxRating?: number;
+  isDisabled?: boolean;
   initialRating?: number;
   size?: number;
   color?: string;
@@ -53,15 +54,16 @@ export default function Rating(props: RatingProps) {
           return (
             <Star
               index={index}
-              hoverRating={hoverRating}
+              isDisabled={props.isDisabled}
               halfFillMode={props.halfFillMode}
-              onMouseMove={(event) => handleMouseMove(index, event)}
-              onMouseLeave={handleMouseLeave}
-              onClick={handleOnClick}
               size={props.size}
               color={props.color}
               activeColor={props.activeColor}
               readOnly={props.readOnly}
+              hoverRating={hoverRating}
+              onMouseMove={(event) => handleMouseMove(index, event)}
+              onMouseLeave={handleMouseLeave}
+              onClick={handleOnClick}
             />
           );
         }}

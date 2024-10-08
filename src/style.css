@@ -1,0 +1,6 @@
+  .disabled-div {
+    pointer-events: none;
+    opacity: 0.5;
+    user-select: none;
+    cursor: not-allowed;
+  }
