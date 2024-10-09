@@ -1,6 +1,7 @@
 import { defineConfig } from "tsup";
 import * as preset from "tsup-preset-solid";
 
+
 const preset_options: preset.PresetOptions = {
   // array or single object
   entries: [
@@ -9,13 +10,13 @@ const preset_options: preset.PresetOptions = {
       // entries with '.tsx' extension will have `solid` export condition generated
       entry: "src/index.tsx",
       // will generate a separate development entry
-      dev_entry: true,
+      dev_entry: false,
     },
   ],
   // Set to `true` to remove all `console.*` calls and `debugger` statements in prod builds
   drop_console: true,
   // Set to `true` to generate a CommonJS build alongside ESM
-  // cjs: true,
+  cjs: true,
 };
 
 const CI =
@@ -36,9 +37,8 @@ export default defineConfig((config) => {
       `package.json: \n\n${JSON.stringify(package_fields, null, 2)}\n\n`,
     );
 
-    // will update ./package.json with the correct export fields
     preset.writePackageJson(package_fields);
   }
 
-  return preset.generateTsupOptions(parsed_options);
+  return preset.generateTsupOptions(parsed_options)
 });
