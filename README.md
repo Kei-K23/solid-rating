@@ -23,8 +23,8 @@ npm i solid-rating
 ```ts
 // Actual Rating component
 import Rating from "solid-rating";
-// Import global CSS
-import "solid-rating/index.css";
+// Import global CSS from node_modules folder
+import "./node_modules/solid-rating/dist/style.css";
 ```
 
 **Importing the CSS only once in the top-level file (most likely main.js or App.jsx) is enough to use Rating component throughout your App.**
@@ -33,6 +33,7 @@ import "solid-rating/index.css";
 
 ```tsx
 import { createEffect, createSignal } from "solid-js";
+import "./node_modules/solid-rating/dist/style.css"; // Replace with your actual node_modules folder path
 import Rating from "solid-rating";
 
 function App() {

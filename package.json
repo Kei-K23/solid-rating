@@ -25,7 +25,6 @@
   "types": "./dist/index.d.ts",
   "browser": {},
   "exports": {
-    "solid": "./dist/index.jsx",
     "import": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
