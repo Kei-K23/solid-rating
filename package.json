@@ -1,6 +1,6 @@
 {
   "name": "solid-rating",
-  "version": "0.2.3",
+  "version": "0.2.2",
   "description": "Highly customizable, easy to use, declarative and zero dependency stars rating component for Solid.",
   "license": "MIT",
   "author": "Kei-K23",
@@ -38,7 +38,7 @@
   "typesVersions": {},
   "scripts": {
     "dev": "vite serve dev",
-    "build": "rm -rf dist && vite build",
+    "build": "tsup",
     "prepublishOnly": "pnpm build",
     "lint": "concurrently pnpm:lint:*",
     "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 src/**/*.{js,ts,tsx,jsx}",
