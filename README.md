@@ -5,15 +5,15 @@ Highly customizable, easy to use, declarative and zero dependency stars rating c
 ## Installation
 
 ```bash
-pnpm add @smastrom/react-rating
+pnpm add solid-rating
 ```
 
 ```bash
-yarn add @smastrom/react-rating
+yarn add solid-rating
 ```
 
 ```bash
-npm i @smastrom/react-rating
+npm i solid-rating
 ```
 
 ## Usage
@@ -22,9 +22,9 @@ npm i @smastrom/react-rating
 
 ```ts
 // Actual Rating component
-import Rating from "src";
+import Rating from "solid-rating";
 // Import global CSS
-import "src/style.css";
+import "solid-rating/style.css";
 ```
 
 **Importing the CSS only once in the top-level file (most likely main.js or App.jsx) is enough to use Rating component throughout your App.**

@@ -30,7 +30,16 @@ function App() {
           "justify-content": "center",
         }}
       >
-        <Rating />
+        <Rating
+          maxRating={5}
+          initialRating={3}
+          size={100}
+          color="#e4e5e9"
+          activeColor="#Afc107"
+          halfFillMode
+          onChange={setValue}
+          onClick={setClickValue}
+        />
       </div>
     </div>
   );
