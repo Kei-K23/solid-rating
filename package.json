@@ -14,12 +14,14 @@
     "url": "https://github.com/Kei-K23/solid-rating/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "style.css"
   ],
   "private": false,
   "sideEffects": false,
   "type": "module",
   "main": "./dist/index.js",
+  "style": "/dist/index.css",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "browser": {},

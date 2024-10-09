@@ -24,7 +24,7 @@ npm i solid-rating
 // Actual Rating component
 import Rating from "solid-rating";
 // Import global CSS
-import "solid-rating/style.css";
+import "solid-rating/index.css";
 ```
 
 **Importing the CSS only once in the top-level file (most likely main.js or App.jsx) is enough to use Rating component throughout your App.**
@@ -33,8 +33,7 @@ import "solid-rating/style.css";
 
 ```tsx
 import { createEffect, createSignal } from "solid-js";
-import Rating from "src";
-import "src/style.css";
+import Rating from "solid-rating";
 
 function App() {
   return (
@@ -46,7 +45,16 @@ function App() {
           "justify-content": "center",
         }}
       >
-        <Rating />
+        <Rating
+          maxRating={5}
+          initialRating={3}
+          size={100}
+          color="#e4e5e9"
+          activeColor="#Afc107"
+          isDisabled
+          onChange={setValue}
+          onClick={setClickValue}
+        />
       </div>
     </div>
   );

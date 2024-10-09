@@ -1,6 +1,5 @@
 import { createEffect, createSignal } from "solid-js";
 import Rating from "src";
-import "src/style.css";
 
 function App() {
   const [value, setValue] = createSignal(0);
@@ -36,7 +35,7 @@ function App() {
           size={100}
           color="#e4e5e9"
           activeColor="#Afc107"
-          halfFillMode
+          isDisabled
           onChange={setValue}
           onClick={setClickValue}
         />
