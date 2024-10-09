@@ -29,7 +29,6 @@ export default function Rating(props: RatingProps) {
       (event.currentTarget as HTMLElement).getBoundingClientRect().left;
 
     const halfStarWidth = starWidth / 2;
-    console.log(halfStarWidth, "her");
 
     if (props.halfFillMode) {
       setHoverRating(mouseX < halfStarWidth ? index + 0.5 : index + 1);

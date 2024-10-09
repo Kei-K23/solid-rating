@@ -18,6 +18,7 @@ function App() {
       <h1
         style={{
           "text-align": "center",
+          "margin-top": "50px",
         }}
       >
         Solid Rating
@@ -29,16 +30,7 @@ function App() {
           "justify-content": "center",
         }}
       >
-        <Rating
-          maxRating={5}
-          initialRating={3}
-          size={100}
-          color="#e4e5e9"
-          activeColor="#Afc107"
-          halfFillMode
-          onChange={setValue}
-          onClick={setClickValue}
-        />
+        <Rating />
       </div>
     </div>
   );
