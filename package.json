@@ -1,6 +1,6 @@
 {
   "name": "solid-rating",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Highly customizable, easy to use, declarative and zero dependency stars rating component for Solid.",
   "license": "MIT",
   "author": "Kei-K23",
